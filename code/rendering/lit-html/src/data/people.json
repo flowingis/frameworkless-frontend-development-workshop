@@ -1,0 +1,182 @@
+[
+  {
+    "guid": "f854be06-1e93-4356-a848-71c022136270",
+    "picture": "https://picsum.photos/50?image=3",
+    "age": 39,
+    "team": "Green",
+    "name": "Tamra Dunlap",
+    "gender": "female",
+    "email": "tamradunlap@zuvy.com"
+  },
+  {
+    "guid": "54fcbcc0-e7fa-498a-b150-beddf3ff44a0",
+    "picture": "https://picsum.photos/50?image=10",
+    "age": 30,
+    "team": "Green",
+    "name": "Carlene Alford",
+    "gender": "female",
+    "email": "carlenealford@zuvy.com"
+  },
+  {
+    "guid": "0e70c3b4-26c5-406f-aaaa-eee6243d3717",
+    "picture": "https://picsum.photos/50?image=25",
+    "age": 37,
+    "team": "Yellow",
+    "name": "Katina Ayers",
+    "gender": "female",
+    "email": "katinaayers@zuvy.com"
+  },
+  {
+    "guid": "d0b4cc2c-77ed-4090-9452-8fdd8607a151",
+    "picture": "https://picsum.photos/50?image=5",
+    "age": 39,
+    "team": "Yellow",
+    "name": "Roslyn Burch",
+    "gender": "female",
+    "email": "roslynburch@zuvy.com"
+  },
+  {
+    "guid": "de3a76ba-b33b-45b6-890c-efaf444756da",
+    "picture": "https://picsum.photos/50?image=15",
+    "age": 30,
+    "team": "Green",
+    "name": "Cobb Walton",
+    "gender": "male",
+    "email": "cobbwalton@zuvy.com"
+  },
+  {
+    "guid": "e576e2b0-41fc-4f6e-a686-bc6385571e0f",
+    "picture": "https://picsum.photos/50?image=42",
+    "age": 40,
+    "team": "Red",
+    "name": "Debra Gardner",
+    "gender": "female",
+    "email": "debragardner@zuvy.com"
+  },
+  {
+    "guid": "cc7c6033-ed92-4d9f-b17b-e179d797f283",
+    "picture": "https://picsum.photos/50?image=31",
+    "age": 35,
+    "team": "Yellow",
+    "name": "Christi Faulkner",
+    "gender": "female",
+    "email": "christifaulkner@zuvy.com"
+  },
+  {
+    "guid": "b0e92a29-dfb5-42a5-8baa-85187628dd07",
+    "picture": "https://picsum.photos/50?image=32",
+    "age": 33,
+    "team": "Green",
+    "name": "Carmen Wong",
+    "gender": "female",
+    "email": "carmenwong@zuvy.com"
+  },
+  {
+    "guid": "fe9f4c36-dada-47c6-b759-8c32f3202a28",
+    "picture": "https://picsum.photos/50?image=6",
+    "age": 40,
+    "team": "Green",
+    "name": "Rush Baldwin",
+    "gender": "male",
+    "email": "rushbaldwin@zuvy.com"
+  },
+  {
+    "guid": "3db787e3-0d3c-4a93-8d94-df701fc71d61",
+    "picture": "https://picsum.photos/50?image=42",
+    "age": 20,
+    "team": "Blue",
+    "name": "Porter Beard",
+    "gender": "male",
+    "email": "porterbeard@zuvy.com"
+  },
+  {
+    "guid": "38599fb4-c796-4e7a-a12a-acd33be74932",
+    "picture": "https://picsum.photos/50?image=37",
+    "age": 40,
+    "team": "Red",
+    "name": "Preston Puckett",
+    "gender": "male",
+    "email": "prestonpuckett@zuvy.com"
+  },
+  {
+    "guid": "4f2f6519-beaa-4a6d-a623-3cd6be73e7ff",
+    "picture": "https://picsum.photos/50?image=22",
+    "age": 21,
+    "team": "Green",
+    "name": "Gomez Head",
+    "gender": "male",
+    "email": "gomezhead@zuvy.com"
+  },
+  {
+    "guid": "13fc0cce-6849-4971-beea-186dc9e5e93c",
+    "picture": "https://picsum.photos/50?image=15",
+    "age": 30,
+    "team": "Yellow",
+    "name": "Goldie Howell",
+    "gender": "female",
+    "email": "goldiehowell@zuvy.com"
+  },
+  {
+    "guid": "df18eb83-1c6f-4a96-9b36-8e33569fb9f8",
+    "picture": "https://picsum.photos/50?image=42",
+    "age": 33,
+    "team": "Red",
+    "name": "Greer Solomon",
+    "gender": "male",
+    "email": "greersolomon@zuvy.com"
+  },
+  {
+    "guid": "cb101e5d-0351-4958-a072-02cd7487098e",
+    "picture": "https://picsum.photos/50?image=43",
+    "age": 34,
+    "team": "Yellow",
+    "name": "Beverley Boyle",
+    "gender": "female",
+    "email": "beverleyboyle@zuvy.com"
+  },
+  {
+    "guid": "8912128b-8057-41a3-bda6-17c889662618",
+    "picture": "https://picsum.photos/50?image=11",
+    "age": 37,
+    "team": "Yellow",
+    "name": "Finch Tate",
+    "gender": "male",
+    "email": "finchtate@zuvy.com"
+  },
+  {
+    "guid": "1adbf554-a2bb-42bc-b16c-ca60d5c6670e",
+    "picture": "https://picsum.photos/50?image=36",
+    "age": 32,
+    "team": "Green",
+    "name": "Graves Blackwell",
+    "gender": "male",
+    "email": "gravesblackwell@zuvy.com"
+  },
+  {
+    "guid": "302d48ec-39b1-4b13-be26-1a2c80a5bbc7",
+    "picture": "https://picsum.photos/50?image=42",
+    "age": 23,
+    "team": "Blue",
+    "name": "Head Holcomb",
+    "gender": "male",
+    "email": "headholcomb@zuvy.com"
+  },
+  {
+    "guid": "b452fead-cda5-45f8-a8e0-cbf38f17c6f4",
+    "picture": "https://picsum.photos/50?image=43",
+    "age": 31,
+    "team": "Red",
+    "name": "Latasha Cabrera",
+    "gender": "female",
+    "email": "latashacabrera@zuvy.com"
+  },
+  {
+    "guid": "bf78623a-8435-405d-b1ad-c7079336d339",
+    "picture": "https://picsum.photos/50?image=17",
+    "age": 31,
+    "team": "Green",
+    "name": "Marie Brennan",
+    "gender": "female",
+    "email": "mariebrennan@zuvy.com"
+  }
+]
