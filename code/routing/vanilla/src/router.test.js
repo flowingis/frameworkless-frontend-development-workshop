@@ -4,13 +4,13 @@ jest.useFakeTimers()
 
 const mockWindow = {
   location: {
-    href: 'http://localhost:8080'
+    pathname: ''
   },
   setInterval: global.setInterval
 }
 
 beforeEach(() => {
-  mockWindow.location.href = 'http://localhost:8080'
+  mockWindow.location.pathname = ''
 })
 
 describe('router', () => {
@@ -29,13 +29,13 @@ describe('router', () => {
 
     router.init()
 
-    mockWindow.location.href = 'http://localhost:8080/#/'
+    mockWindow.location.pathname = '/'
 
     jest.runTimersToTime(1000)
 
     expect(result).toBe(0)
 
-    mockWindow.location.href = 'http://localhost:8080/#/detail'
+    mockWindow.location.pathname = '/detail'
 
     jest.runTimersToTime(1000)
 
@@ -53,7 +53,7 @@ describe('router', () => {
 
     router.init()
 
-    mockWindow.location.href = 'http://localhost:8080/#/detail/1/invoices/2'
+    mockWindow.location.pathname = '/detail/1/invoices/2'
 
     jest.runTimersToTime(1000)
 
@@ -72,7 +72,7 @@ describe('router', () => {
 
       router.init()
 
-      mockWindow.location.href = 'http://localhost:8080/#/'
+      mockWindow.location.pathname = '/'
 
       router.dispose()
 

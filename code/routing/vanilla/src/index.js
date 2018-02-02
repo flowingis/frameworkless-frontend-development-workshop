@@ -23,3 +23,11 @@ const hyperDetail = params => {
 router.addRoute(/detail\/(.*)\/invoices\/(.*)/, hyperDetail)
 router.addRoute(/detail\/(.*)/, detail)
 router.addRoute('/', list)
+
+document.querySelectorAll('a[data-navigation]').forEach(a => {
+  const path = a.pathname
+  a.addEventListener('click', (e) => {
+    e.preventDefault()
+    router.navigate(path)
+  })
+})

@@ -5,15 +5,6 @@ export const createRouter = scope => {
   let lastFragment
   const routes = []
 
-  const getFragment = () => {
-    const index = scope.location.href.lastIndexOf('#')
-    if (index === -1) {
-      return ''
-    }
-
-    return scope.location.href.substring(index + 1)
-  }
-
   const addRoute = (url, cb) => {
     routes.push({
       url,
@@ -22,7 +13,7 @@ export const createRouter = scope => {
   }
 
   const tick = () => {
-    const fragment = getFragment()
+    const fragment = scope.location.pathname
     if (lastFragment === fragment) {
       return
     }
@@ -47,12 +38,9 @@ export const createRouter = scope => {
     }
   }
 
-  const init = () => {
-    const index = scope.location.href.lastIndexOf('#')
-    if (index === -1) {
-      scope.location.href += '#'
-    }
+  const navigate = path => scope.history.pushState(null, null, path)
 
+  const init = () => {
     interval = setInterval(tick, CHECKTIME)
   }
 
@@ -63,6 +51,7 @@ export const createRouter = scope => {
   return {
     addRoute,
     init,
+    navigate,
     dispose
   }
 }
