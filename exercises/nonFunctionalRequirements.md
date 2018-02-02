@@ -1,0 +1,5 @@
+# Choosing Non-functional requirement
+
+*Total time: ~20min*
+
+Introdurre l'argomento spiegando che spesso sono proprio i requisiti non funzionali o il fatto di non essere noti a far fallire un progetto. Al termine del tempo date 5 minuti per far scrivere ad ogni membro del gruppo massimo 4 requisiti non funzionali a testa (fase divergente), importante notare che in questa fase ogni persona lavora da sola. Mostrare la lista dei requisiti non funzionali presente nella root del repository, invitare però a trovarne di nuovi specifici per il contesto del tavolo. Al termine dare altri 5 minuti di fase convergente in cui tutto il tavolo discute insieme. Il numero massimo di foglietti è 4 da dividere in 2 must-have e 2 nice-to-have. Durante questa fase far notare che è accettabile che due requisiti sembrino in aperto contrasto tra loro, significa solo che le tecnologie scelte dovranno tenere in considerazione entrambi i punti senza per forza soddisfarli pienamente entrambi.
