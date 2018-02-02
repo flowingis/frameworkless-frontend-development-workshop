@@ -11,5 +11,5 @@ eventBus.subscribe('teams', teams)
 eventBus.subscribe('matches', matches)
 
 eventBus.connect(state => {
-  render(eventBus.publish, state)
+  window.requestAnimationFrame(() => render(eventBus.publish, state))
 })
