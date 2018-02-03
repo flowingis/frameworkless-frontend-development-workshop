@@ -1,11 +1,11 @@
-import observableFactory from '../observableFactory'
+export default (state) => {
+  if (!state) {
+    throw new Error('state container is required')
+  }
 
-const createInitialState = () => ({
-  list: []
-})
-
-export default (initialState) => {
-  const state = initialState || createInitialState()
+  if (!state.list) {
+    state.list = []
+  }
 
   const add = name => {
     state.list.push({
@@ -22,11 +22,9 @@ export default (initialState) => {
     state.list[teamId].players = state.list[teamId].players.filter(player => playerId !== player)
   }
 
-  const base = {
+  return {
     add,
     addPlayer,
     removePlayer
   }
-
-  return observableFactory(base, () => state)
 }

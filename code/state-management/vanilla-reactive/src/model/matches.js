@@ -1,11 +1,11 @@
-import observableFactory from '../observableFactory'
+export default (state) => {
+  if (!state) {
+    throw new Error('state container is required')
+  }
 
-const createInitialState = () => ({
-  list: []
-})
-
-export default (initialState) => {
-  const state = initialState || createInitialState()
+  if (!state.list) {
+    state.list = []
+  }
 
   const add = (teamA, teamB) => {
     state.list.push({
@@ -37,12 +37,10 @@ export default (initialState) => {
     }
   }
 
-  const base = {
+  return {
     add,
     start,
     stop,
     score
   }
-
-  return observableFactory(base, () => state)
 }

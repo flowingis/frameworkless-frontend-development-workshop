@@ -1,19 +1,17 @@
-import observableFactory from '../observableFactory'
+export default (state) => {
+  if (!state) {
+    throw new Error('state container is required')
+  }
 
-const createInitialState = () => ({
-  list: []
-})
-
-export default (initialState) => {
-  const state = initialState || createInitialState()
+  if (!state.list) {
+    state.list = []
+  }
 
   const add = name => {
     state.list.push({name})
   }
 
-  const base = {
+  return {
     add
   }
-
-  return observableFactory(base, () => state)
 }

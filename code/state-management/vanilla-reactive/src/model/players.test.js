@@ -1,19 +1,28 @@
 import playersFactory from './players'
-let players
-
-beforeEach(() => {
-  players = playersFactory()
-})
 
 test('should add players', () => {
-  let list
+  const state = {
+    list: []
+  }
+
+  const players = playersFactory(state)
   const EXPECTATION = [{
     name: 'Solid Snake'
   }]
 
-  players.addChangeListener(data => {
-    list = data.list
-  })
   players.add('Solid Snake')
-  expect(list).toEqual(EXPECTATION)
+
+  expect(state.list).toEqual(EXPECTATION)
+})
+
+test('should throw an error if no state is provided', () => {
+  expect(() => {
+    playersFactory()
+  }).toThrow()
+})
+
+test('should format an invalid state', () => {
+  const state = {}
+  playersFactory(state)
+  expect(state.list).toEqual([])
 })

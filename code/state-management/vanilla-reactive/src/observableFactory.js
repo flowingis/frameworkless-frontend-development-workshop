@@ -12,16 +12,28 @@ export default (base, getState) => {
     }
   }
 
-  const proxy = {
-    addChangeListener
+  const createProxyObject = base => {
+    const proxy = {}
+    Object.keys(base).forEach(methodName => {
+      const value = base[methodName]
+      if (typeof value === 'function') {
+        proxy[methodName] = (...args) => {
+          base[methodName](...args)
+          invokeListeners()
+        }
+        return
+      }
+
+      if (typeof value === 'object') {
+        proxy[methodName] = createProxyObject(value)
+      }
+    })
+    return proxy
   }
 
-  Object.keys(base).forEach(methodName => {
-    proxy[methodName] = (...args) => {
-      base[methodName](...args)
-      invokeListeners()
-    }
-  })
+  const proxy = createProxyObject(base)
+
+  proxy.addChangeListener = addChangeListener
 
   return proxy
 }
