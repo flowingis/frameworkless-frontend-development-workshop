@@ -5,41 +5,6 @@ beforeEach(() => {
   teams = teamsFactory()
 })
 
-test('listeners should be invoked immediatly', () => {
-  let counter = 0
-  teams.addChangeListener(data => {
-    counter++
-  })
-  expect(counter).toBe(1)
-})
-
-test('listeners should be invoked when changing data', () => {
-  let counter = 0
-  teams.addChangeListener(data => {
-    counter++
-  })
-  teams.add('FOX')
-  expect(counter).toBe(2)
-})
-
-test('listeners should be removed when unsubscribing', () => {
-  let counter = 0
-  const unsubscribe = teams.addChangeListener(data => {
-    counter++
-  })
-  unsubscribe()
-  teams.add('FOX')
-  expect(counter).toBe(1)
-})
-
-test('state should be immutable', () => {
-  teams.addChangeListener(data => {
-    expect(() => {
-      data.list = 1
-    }).toThrow()
-  })
-})
-
 test('should add teams', () => {
   let list
   const EXPECTATION = [{

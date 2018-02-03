@@ -1,4 +1,4 @@
-const freeze = state => Object.freeze(Object.assign({}, state))
+import observableFactory from '../observableFactory'
 
 const createInitialState = () => ({
   list: []
@@ -6,17 +6,6 @@ const createInitialState = () => ({
 
 export default (initialState) => {
   const state = initialState || createInitialState()
-  let changeListeners = []
-
-  const invokeListeners = () => changeListeners.forEach(cb => cb(freeze(state)))
-
-  const addChangeListener = cb => {
-    changeListeners.push(cb)
-    cb(freeze(state))
-    return () => {
-      changeListeners = changeListeners.filter(element => element !== cb)
-    }
-  }
 
   const add = (teamA, teamB) => {
     state.list.push({
@@ -26,19 +15,16 @@ export default (initialState) => {
       teamBScore: 0,
       started: false
     })
-    invokeListeners()
   }
 
   const start = (matchId, when) => {
     state.list[matchId].started = true
     state.list[matchId].startTime = when
-    invokeListeners()
   }
 
   const stop = (matchId, when) => {
     state.list[matchId].started = false
     state.list[matchId].stopTime = when
-    invokeListeners()
   }
 
   const score = (matchId, teamId) => {
@@ -49,14 +35,14 @@ export default (initialState) => {
     if (match.teamB === teamId) {
       match.teamBScore++
     }
-    invokeListeners()
   }
 
-  return {
-    addChangeListener,
+  const base = {
     add,
     start,
     stop,
     score
   }
+
+  return observableFactory(base, () => state)
 }

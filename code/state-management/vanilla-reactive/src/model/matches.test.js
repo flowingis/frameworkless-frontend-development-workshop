@@ -6,41 +6,6 @@ beforeEach(() => {
   matches = matchesFactory()
 })
 
-test('listeners should be invoked immediatly', () => {
-  let counter = 0
-  matches.addChangeListener(data => {
-    counter++
-  })
-  expect(counter).toBe(1)
-})
-
-test('listeners should be invoked when changing data', () => {
-  let counter = 0
-  matches.addChangeListener(data => {
-    counter++
-  })
-  matches.add('Solid Snake')
-  expect(counter).toBe(2)
-})
-
-test('listeners should be removed when unsubscribing', () => {
-  let counter = 0
-  const unsubscribe = matches.addChangeListener(data => {
-    counter++
-  })
-  unsubscribe()
-  matches.add('Solid Snake')
-  expect(counter).toBe(1)
-})
-
-test('state should be immutable', () => {
-  matches.addChangeListener(data => {
-    expect(() => {
-      data.list = 1
-    }).toThrow()
-  })
-})
-
 test('should add matches', () => {
   let list
   const EXPECTATION = [{
