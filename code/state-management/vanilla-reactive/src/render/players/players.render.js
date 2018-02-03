@@ -1,7 +1,7 @@
 import template from './players.template.html'
 import { htmlToElement } from '../../utils/dom'
 
-export default (state, model) => {
+export default (state, actions) => {
   const playerListContainer = document.querySelector('div[role="player-list"]')
 
   playerListContainer.innerHTML = ''
@@ -10,7 +10,7 @@ export default (state, model) => {
   const input = playerList.querySelector('input')
 
   playerList.querySelector('button').addEventListener('click', () => {
-    model.players.add(input.value)
+    actions.players.add(input.value)
   })
 
   const ul = playerList.querySelector('ul')

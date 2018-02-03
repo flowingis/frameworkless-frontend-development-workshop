@@ -1,5 +1,5 @@
-import model from './model'
+import actions from './actions'
 import render from './render'
 
-const executeRender = (state, model) => window.requestAnimationFrame(() => render(state, model))
-model.addChangeListener(state => executeRender(state, model))
+const executeRender = (state, actions) => window.requestAnimationFrame(() => render(state, actions))
+actions.addChangeListener(state => executeRender(state, actions))

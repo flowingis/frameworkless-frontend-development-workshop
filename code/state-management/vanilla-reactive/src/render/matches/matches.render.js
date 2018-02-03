@@ -2,7 +2,7 @@ import template from './matches.template.html'
 import { htmlToElement } from '../../utils/dom'
 import selector from './matches.selector'
 
-export default (state, model) => {
+export default (state, actions) => {
   const matchListContainer = document.querySelector('div[role="match-list"]')
 
   matchListContainer.innerHTML = ''
@@ -12,7 +12,7 @@ export default (state, model) => {
   const teamBInput = matchList.querySelector('input[role="team-b"]')
 
   matchList.querySelector('button').addEventListener('click', () => {
-    model.matches.add(parseInt(teamAInput.value), parseInt(teamBInput.value))
+    actions.matches.add(parseInt(teamAInput.value), parseInt(teamBInput.value))
   })
 
   const ul = matchList.querySelector('ul')
@@ -30,11 +30,11 @@ export default (state, model) => {
     const element = htmlToElement(matchTemplate)
 
     element.querySelector('button[role="score-a"]').addEventListener('click', () => {
-      model.matches.score(match.id, match.teamA)
+      actions.matches.score(match.id, match.teamA)
     })
 
     element.querySelector('button[role="score-b"]').addEventListener('click', () => {
-      model.matches.score(match.id, match.teamB)
+      actions.matches.score(match.id, match.teamB)
     })
 
     ul.appendChild(element)

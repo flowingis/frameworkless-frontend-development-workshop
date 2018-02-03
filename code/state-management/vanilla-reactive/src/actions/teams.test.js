@@ -1,4 +1,4 @@
-import teamsFactory from './teams'
+import teamsActionsFactory from './teams'
 
 test('should add teams', () => {
   const state = {
@@ -10,9 +10,9 @@ test('should add teams', () => {
     players: []
   }]
 
-  const teams = teamsFactory(state)
+  const teamsActions = teamsActionsFactory(state)
 
-  teams.add('FOX')
+  teamsActions.add('FOX')
 
   expect(state.list).toEqual(EXPECTATION)
 })
@@ -25,10 +25,10 @@ test('should add players to teams', () => {
     }]
   }
 
-  const teams = teamsFactory(state)
+  const teamsActions = teamsActionsFactory(state)
 
-  teams.addPlayer(0, 0)
-  teams.addPlayer(0, 2)
+  teamsActions.addPlayer(0, 0)
+  teamsActions.addPlayer(0, 2)
 
   expect(state.list[0].players).toEqual([0, 2])
 })
@@ -41,21 +41,21 @@ test('should remove players from teams', () => {
     }]
   }
 
-  const teams = teamsFactory(state)
+  const teamsActions = teamsActionsFactory(state)
 
-  teams.removePlayer(0, 0)
+  teamsActions.removePlayer(0, 0)
 
   expect(state.list[0].players).toEqual([2])
 })
 
 test('should throw an error if no state is provided', () => {
   expect(() => {
-    teamsFactory()
+    teamsActionsFactory()
   }).toThrow()
 })
 
 test('should format an invalid state', () => {
   const state = {}
-  teamsFactory(state)
+  teamsActionsFactory(state)
   expect(state.list).toEqual([])
 })

@@ -1,4 +1,4 @@
-import matchesFactory from './matches'
+import matchesActionsFactory from './matches'
 const now = (new Date()).getTime()
 
 test('should add matches', () => {
@@ -6,7 +6,7 @@ test('should add matches', () => {
     list: []
   }
 
-  const matches = matchesFactory(state)
+  const matchesActions = matchesActionsFactory(state)
 
   const EXPECTATION = [{
     teamA: 12,
@@ -16,7 +16,7 @@ test('should add matches', () => {
     started: false
   }]
 
-  matches.add(12, 34)
+  matchesActions.add(12, 34)
 
   expect(state.list).toEqual(EXPECTATION)
 })
@@ -31,9 +31,9 @@ test('should start a match', () => {
       started: false
     }]
   }
-  const matches = matchesFactory(state)
+  const matchesActions = matchesActionsFactory(state)
 
-  matches.start(0, now)
+  matchesActions.start(0, now)
   expect(state.list[0].started).toBe(true)
   expect(state.list[0].startTime).toBe(now)
 })
@@ -49,9 +49,9 @@ test('should stop a match', () => {
     }]
   }
 
-  const matches = matchesFactory(state)
+  const matchesActions = matchesActionsFactory(state)
 
-  matches.stop(0, now)
+  matchesActions.stop(0, now)
 
   expect(state.list[0].started).toBe(false)
   expect(state.list[0].stopTime).toBe(now)
@@ -77,13 +77,13 @@ test('should add score to the right team', () => {
     ]
   }
 
-  const matches = matchesFactory(state)
+  const matchesActions = matchesActionsFactory(state)
 
-  matches.score(1, 87)
-  matches.score(1, 87)
-  matches.score(1, 0)
-  matches.score(1, 87)
-  matches.score(1, 0)
+  matchesActions.score(1, 87)
+  matchesActions.score(1, 87)
+  matchesActions.score(1, 0)
+  matchesActions.score(1, 87)
+  matchesActions.score(1, 0)
 
   expect(state.list[1].teamAScore).toBe(3)
   expect(state.list[1].teamBScore).toBe(2)
@@ -91,12 +91,12 @@ test('should add score to the right team', () => {
 
 test('should throw an error if no state is provided', () => {
   expect(() => {
-    matchesFactory()
+    matchesActionsFactory()
   }).toThrow()
 })
 
 test('should format an invalid state', () => {
   const state = {}
-  matchesFactory(state)
+  matchesActionsFactory(state)
   expect(state.list).toEqual([])
 })

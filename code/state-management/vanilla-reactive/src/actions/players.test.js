@@ -1,28 +1,28 @@
-import playersFactory from './players'
+import playersActionsFactory from './players'
 
 test('should add players', () => {
   const state = {
     list: []
   }
 
-  const players = playersFactory(state)
+  const playersActions = playersActionsFactory(state)
   const EXPECTATION = [{
     name: 'Solid Snake'
   }]
 
-  players.add('Solid Snake')
+  playersActions.add('Solid Snake')
 
   expect(state.list).toEqual(EXPECTATION)
 })
 
 test('should throw an error if no state is provided', () => {
   expect(() => {
-    playersFactory()
+    playersActionsFactory()
   }).toThrow()
 })
 
 test('should format an invalid state', () => {
   const state = {}
-  playersFactory(state)
+  playersActionsFactory(state)
   expect(state.list).toEqual([])
 })

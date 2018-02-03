@@ -3,7 +3,7 @@ import teamTemplate from './team.template.html'
 import { htmlToElement } from '../../utils/dom'
 import selector from './teams.selector'
 
-const createTeamElement = (team, model) => {
+const createTeamElement = (team, actions) => {
   const element = htmlToElement(teamTemplate)
   element.querySelector('span').innerText = `${team.id} - ${team.name}`
 
@@ -13,7 +13,7 @@ const createTeamElement = (team, model) => {
     const playerElement = htmlToElement(`<li>${player.name}<button>X</button></li>`)
 
     const onClick = () => {
-      model.teams.removePlayer(team.id, player.id)
+      actions.teams.removePlayer(team.id, player.id)
     }
 
     playerElement.querySelector('button').addEventListener('click', onClick)
@@ -22,7 +22,7 @@ const createTeamElement = (team, model) => {
   return element
 }
 
-export default (state, model) => {
+export default (state, actions) => {
   const teamListContainer = document.querySelector('div[role="team-list"]')
 
   teamListContainer.innerHTML = ''
@@ -34,11 +34,11 @@ export default (state, model) => {
   const playerIdInput = teamList.querySelector('input[role="player-id"]')
 
   teamList.querySelector('button[role="add"]').addEventListener('click', () => {
-    model.teams.add(teamNameInput.value)
+    actions.teams.add(teamNameInput.value)
   })
 
   teamList.querySelector('button[role="add-player"]').addEventListener('click', () => {
-    model.teams.addPlayer(parseInt(teamIdInput.value), parseInt(playerIdInput.value))
+    actions.teams.addPlayer(parseInt(teamIdInput.value), parseInt(playerIdInput.value))
   })
 
   const ul = teamList.querySelector('ul')
@@ -47,7 +47,7 @@ export default (state, model) => {
 
   teams
   .forEach((team, index) => {
-    ul.appendChild(createTeamElement(team, model))
+    ul.appendChild(createTeamElement(team, actions))
   })
 
   teamListContainer.appendChild(teamList)
