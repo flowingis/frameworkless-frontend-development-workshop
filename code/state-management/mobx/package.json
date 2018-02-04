@@ -1,0 +1,54 @@
+{
+  "name": "frontend-frameworkless-development",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "jest",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [
+    "Frontend",
+    "Frameworkless"
+  ],
+  "author": "Francesco Strazzullo",
+  "license": "MIT",
+  "dependencies": {
+    "mobx": "3.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-jest": "21.0.2",
+    "babel-loader": "7.1.2",
+    "babel-plugin-transform-decorators-legacy": "1.3.4",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-stage-1": "6.24.1",
+    "file-loader": "0.11.2",
+    "gh-pages": "1.0.0",
+    "html-loader": "0.5.1",
+    "jest": "21.1.0",
+    "regenerator-runtime": "0.11.0",
+    "standard": "10.0.3",
+    "url-loader": "0.5.9",
+    "webpack": "3.6.0",
+    "webpack-dev-server": "2.8.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "html"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.html$": "<rootDir>/test/htmlLoader.js",
+      "^.+\\.svg$": "<rootDir>/test/htmlLoader.js"
+    }
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "expect",
+      "test",
+      "beforeEach"
+    ]
+  }
+}
