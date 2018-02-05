@@ -30,15 +30,9 @@
     "webpack-dev-server": "2.8.2"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "html"
-    ],
-    "transform": {
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.html$": "<rootDir>/test/htmlLoader.js",
-      "^.+\\.svg$": "<rootDir>/test/htmlLoader.js"
-    }
+    "transformIgnorePatterns": [
+      "/node_modules/(?!lit-html).+\\.js$"
+    ]
   },
   "standard": {
     "globals": [

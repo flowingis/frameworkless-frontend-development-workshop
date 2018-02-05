@@ -1,4 +1,5 @@
 import dashboardFactory, {extractTeamData} from './dashboard'
+import { render } from 'lit-html'
 
 const data = [
     {team: 'foo'},
@@ -6,10 +7,14 @@ const data = [
     {team: 'bar'}
 ]
 
-describe('dashboard', () => {
+const createADiv = () => document.createElement('div')
+
+describe.only('dashboard', () => {
   test('it should have a span for each team', () => {
     const dashboard = dashboardFactory(data)
-    const widgets = Array.from(dashboard.querySelectorAll('div>span'))
+    const element = createADiv()
+    render(dashboard, element)
+    const widgets = Array.from(element.querySelectorAll('div>span'))
     expect(widgets.length).toBe(2)
   })
   describe('extractTeamData', () => {

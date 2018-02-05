@@ -1,4 +1,5 @@
 import userTableFactory, {extractTeams} from './user-table'
+import { render } from 'lit-html'
 
 const data = [
     {team: 'foo'},
@@ -6,10 +7,14 @@ const data = [
     {team: 'bar'}
 ]
 
+const createADiv = () => document.createElement('div')
+
 describe('user-table', () => {
   test('it should have a row for each user', () => {
     const userTable = userTableFactory(data)
-    const rows = Array.from(userTable.querySelectorAll('tbody>tr'))
+    const element = createADiv()
+    render(userTable, element)
+    const rows = Array.from(element.querySelectorAll('tbody>tr'))
     expect(rows.length).toBe(data.length)
   })
   describe('extractTeams', () => {
