@@ -11,7 +11,7 @@
     * Vendor Lock-in / Vendor King?
     * Sacrificial Architecture
     * $scope.$apply
-* Going Frameworkless
+* The Frameworkless Toolkit
     * Rendering
         * Esercizio: Pure rendering functions
         * Esercizio: Web Components
