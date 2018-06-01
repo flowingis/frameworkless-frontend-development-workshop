@@ -20,23 +20,19 @@
     "file-loader": "0.11.2",
     "gh-pages": "1.0.0",
     "html-loader": "0.5.1",
-    "jest": "21.1.0",
+    "jest": "23.1.0",
     "regenerator-runtime": "0.11.0",
     "standard": "10.0.3",
     "url-loader": "0.5.9",
-    "webpack": "3.6.0",
-    "webpack-dev-server": "2.8.2"
+    "webpack": "4.10.2",
+    "webpack-cli": "2.1.4",
+    "webpack-dev-server": "3.1.4"
   },
   "jest": {
     "moduleFileExtensions": [
       "js",
       "html"
-    ],
-    "transform": {
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.html$": "<rootDir>/test/htmlLoader.js",
-      "^.+\\.svg$": "<rootDir>/test/htmlLoader.js"
-    }
+    ]
   },
   "standard": {
     "globals": [
