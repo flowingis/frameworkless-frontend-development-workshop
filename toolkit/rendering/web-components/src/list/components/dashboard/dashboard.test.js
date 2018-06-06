@@ -6,7 +6,7 @@ const data = [
     {team: 'bar'}
 ]
 
-describe.only('dashboard', () => {
+describe('dashboard', () => {
   describe('extractTeamData', () => {
     test('it should extract team data from user list', () => {
       const result = extractTeamData(data)
