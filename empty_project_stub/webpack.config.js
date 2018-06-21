@@ -25,5 +25,8 @@ module.exports = {
         use: [ 'url-loader?mimetype=image/svg+xml' ]
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   }
 }
